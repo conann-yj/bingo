@@ -21,17 +21,17 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class BingoGame {
-	static JPanel panelNorth; // »ó´Ü È­¸é
-	static JPanel panelCenter; // °ÔÀÓ È­¸é
+	static JPanel panelNorth; // ìƒë‹¨í™”ë©´
+	static JPanel panelCenter; // ê²Œì„í™”ë©´
 	static JLabel labelMessage;
 	static JButton[] buttons = new JButton[16];
 	static String[] images = { "food01.png", "food02.png", "food03.png", "food04.png", "food05.png", "food06.png",
 			"food07.png", "food08.png", "food01.png", "food02.png", "food03.png", "food04.png", "food05.png",
-			"food06.png", "food07.png", "food08.png" }; //ºù°í È­¸é Ãß°¡
+			"food06.png", "food07.png", "food08.png" }; //ë¹™ê³  í™”ë©´ ì¶”ê°€
 	
 	static int openCount = 0;
-	static int buttonIndexSave1 = 0; //Ã¹¹øÂ° Ä«µå Å¬¸¯
-	static int buttonIndexSave2 = 0; //µÎ¹øÂ° Ä«µå Å¬¸¯
+	static int buttonIndexSave1 = 0; //ì²«ë²ˆì§¸ ì¹´ë“œ í´ë¦­
+	static int buttonIndexSave2 = 0; //ë‘ë²ˆì§¸ ì¹´ë“œ í´ë¦­
 	static Timer timer;
 	static int tryCount = 0;
 	static int successCount = 0;
@@ -44,13 +44,13 @@ public class BingoGame {
 			this.setVisible(true);
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-			initUI(this); // È­¸é±¸¼º
-			mixCard(); //À½½ÄÄ«µå ¼¯±â
+			initUI(this); // í™”ë©´êµ¬ì„±
+			mixCard(); //ìŒì‹ì¹´ë“œ ì„ê¸°
 			
-			this.pack(); //¿©¹é Á¤¸®
+			this.pack(); //ì—¬ë°± ì •ë¦¬
 		}
 		
-		//°°Àº±×¸² ¶Ç´Â ´Ù¸¥±×¸² ³ª¿Ã ¶§ È¿°úÀ½ 
+		//ê°™ì€ê·¸ë¦¼ ë˜ëŠ” ë‹¤ë¥¸ê·¸ë¦¼ ë‚˜ì˜¬ ë•Œ íš¨ê³¼ìŒ 
 		static void playSound(String fileName) {
 			File file = new File("./wav/"+fileName);
 			if(file.exists()) {
@@ -63,7 +63,7 @@ public class BingoGame {
 					e.printStackTrace();
 				}
 			}else {
-				System.out.println("¼Ò¸®°¡ µé¸®Áö ¾Ê½À´Ï´Ù!");
+				System.out.println("ì†Œë¦¬ê°€ ë“¤ë¦¬ì§€ ì•ŠìŠµë‹ˆë‹¤!");
 			}
 		}
 		
@@ -82,14 +82,14 @@ public class BingoGame {
 			btn.setIcon(changeImage(images[index]));
 			
 			openCount++;
-			if(openCount == 1) { //Ã¹¹øÂ° Ä«µå
+			if(openCount == 1) { //ì²«ë²ˆì§¸ ì¹´ë“œ
 				buttonIndexSave1 = index;
-			}else if(openCount == 2){ //µÎ¹øÂ° Ä«µå
+			}else if(openCount == 2){ //ë‘ë²ˆì§¸ ì¹´ë“œ
 				buttonIndexSave2 = index;
-				tryCount++; //µÎ¹øÂ° Å¬¸¯ÇÒ ¶§ È½¼ö Ãß°¡
+				tryCount++; //ë‘ë²ˆì§¸ í´ë¦­í•  ë•Œ íšŸìˆ˜ ì¶”ê°€
 				labelMessage.setText("Find Same Food! " + "Try " + tryCount);
 				
-				//°°Àº ±×¸²ÀÎÁö ¾Æ´ÑÁö ÆÇ´Ü
+				//ê°™ì€ ê·¸ë¦¼ì¸ì§€ ì•„ë‹Œì§€ íŒë‹¨
 				boolean isBingo = checkCard(buttonIndexSave1, buttonIndexSave2);
 				if(isBingo == true) {
 					playSound("bingo.wav");
@@ -106,7 +106,7 @@ public class BingoGame {
 		}
 		
 		public void backQuestion() {
-			//±×¸² ´©¸£°í ±â´Ù¸®´Â Å¸ÀÓ(ÃÊ)
+			//ê·¸ë¦¼ ëˆ„ë¥´ê³  ê¸°ë‹¤ë¦¬ëŠ” íƒ€ì„(ì´ˆ)
 			timer = new Timer(1000,new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -160,7 +160,7 @@ public class BingoGame {
 	
 
 	static void initUI(MyFrame myFrame) {
-		//»ó´Ü È­¸é ±¸¼º
+		//ìƒë‹¨ í™”ë©´ êµ¬ì„±
 		panelNorth = new JPanel();
 		panelNorth.setPreferredSize(new Dimension(400,100));
 		panelNorth.setBackground(Color.PINK);
@@ -171,7 +171,7 @@ public class BingoGame {
 		panelNorth.add(labelMessage);
 		myFrame.add("North",panelNorth);
 		
-		//°ÔÀÓ È­¸é ±¸¼º
+		//ê²Œì„ í™”ë©´ êµ¬ì„±
 		panelCenter = new JPanel();
 		panelCenter.setLayout(new GridLayout(4,4));
 		panelCenter.setPreferredSize(new Dimension(400,400));
@@ -179,7 +179,7 @@ public class BingoGame {
 			buttons[i] = new JButton();
 			buttons[i].setPreferredSize(new Dimension(100,100));
 			buttons[i].setIcon(changeImage("suggestion.png"));
-			buttons[i].addActionListener(myFrame); //¹öÆ° Å¬¸¯
+			buttons[i].addActionListener(myFrame); //ë²„íŠ¼ í´ë¦­
 			panelCenter.add(buttons[i]);
 		}
 		myFrame.add("Center", panelCenter);
