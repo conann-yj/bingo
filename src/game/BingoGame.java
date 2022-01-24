@@ -21,8 +21,8 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class BingoGame {
-	static JPanel panelNorth; // 상단화면
-	static JPanel panelCenter; // 게임화면
+	static JPanel panelNorth; // 상단 화면
+	static JPanel panelCenter; // 게임 화면
 	static JLabel labelMessage;
 	static JButton[] buttons = new JButton[16];
 	static String[] images = { "food01.png", "food02.png", "food03.png", "food04.png", "food05.png", "food06.png",
@@ -30,8 +30,8 @@ public class BingoGame {
 			"food06.png", "food07.png", "food08.png" }; //빙고 화면 추가
 	
 	static int openCount = 0;
-	static int buttonIndexSave1 = 0; //첫번째 카드 클릭
-	static int buttonIndexSave2 = 0; //두번째 카드 클릭
+	static int buttonIndexSave1 = 0; //첫번째 카드 클릭!
+	static int buttonIndexSave2 = 0; //두번째 카드 클릭!
 	static Timer timer;
 	static int tryCount = 0;
 	static int successCount = 0;
