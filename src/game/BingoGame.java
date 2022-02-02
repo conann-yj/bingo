@@ -30,8 +30,8 @@ public class BingoGame {
 			"food06.png", "food07.png", "food08.png" }; //빙고 화면 추가
 	
 	static int openCount = 0;
-	static int buttonIndexSave1 = 0; //첫번째 카드 클릭!
-	static int buttonIndexSave2 = 0; //두번째 카드 클릭!
+	static int buttonIndexSave1 = 0; //첫번째카드 클릭!
+	static int buttonIndexSave2 = 0; //두번째카드 클릭!
 	static Timer timer;
 	static int tryCount = 0;
 	static int successCount = 0;
