@@ -44,8 +44,8 @@ public class BingoGame {
 			this.setVisible(true);
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-			initUI(this); // 화면구성
-			mixCard(); //음식카드섞기
+			initUI(this); // 화면 구성
+			mixCard(); //음식 카드섞기
 			
 			this.pack(); //여백 정리
 		}
