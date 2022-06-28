@@ -21,8 +21,8 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class BingoGame {
-	static JPanel panelNorth; // 상단화면
-	static JPanel panelCenter; // 게임면
+	static JPanel panelNorth; // 상단 화면
+	static JPanel panelCenter; // 게임 화면
 	static JLabel labelMessage;
 	static JButton[] buttons = new JButton[16];
 	static String[] images = { "food01.png", "food02.png", "food03.png", "food04.png", "food05.png", "food06.png",
